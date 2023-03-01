@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CRUD_OperationsInMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace CRUD_OperationsInMVC.Controllers
 {
@@ -11,7 +13,9 @@ namespace CRUD_OperationsInMVC.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            return View();
+            MVC_DBEntities1 dbContext = new MVC_DBEntities1();
+            List<Employee> empList = dbContext.Employees.ToList(); 
+            return View(empList);
         }
     }
 }
