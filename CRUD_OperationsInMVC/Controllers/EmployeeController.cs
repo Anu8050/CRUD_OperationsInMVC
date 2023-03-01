@@ -17,5 +17,11 @@ namespace CRUD_OperationsInMVC.Controllers
             List<Employee> empList = dbContext.Employees.ToList(); 
             return View(empList);
         }
-    }
+
+        public ActionResult Details(int id)
+        {
+            MVC_DBEntities1 dbContext = new MVC_DBEntities1();
+            Employee employee = dbContext.Employees.FirstOrDefault(x => x.EmployeeId == id);
+            return View(employee);
+        }
 }
