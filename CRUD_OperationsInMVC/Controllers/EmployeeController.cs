@@ -14,7 +14,7 @@ namespace CRUD_OperationsInMVC.Controllers
         public ActionResult Index()
         {
             MVC_DBEntities1 dbContext = new MVC_DBEntities1();
-            List<Employee> empList = dbContext.Employees.ToList(); 
+            List<Employee> empList = dbContext.Employees.ToList();
             return View(empList);
         }
 
@@ -24,4 +24,6 @@ namespace CRUD_OperationsInMVC.Controllers
             Employee employee = dbContext.Employees.FirstOrDefault(x => x.EmployeeId == id);
             return View(employee);
         }
+    }
+
 }
